@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package hello;
+
+option go_package = "github.com/matteo-gz/grpc-guide/chapter1/hello/proto;pb";
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (Test1) returns (HelloReply) {
+
+  }
+}
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+message Test1 {
+  optional int32 a = 1;
+}
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
